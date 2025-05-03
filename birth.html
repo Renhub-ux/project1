@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right, #fbd3e9, #bb377d);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 3em;
+      color:black;
+    }
+
+    .photo {
+      margin: 30px 0;
+    }
+
+    img {
+      border: 5px solid #fff;
+      border-radius: 20px;
+      width: 600px;
+      height:650px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+
+    .heart {
+      font-size: 2em;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+
+
+    #gif{
+            width: 160px;
+            margin-bottom: 10px;
+            border: 2px solid;
+        }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- <h1>🎉 Happy Birthday,lily! 🎉</h1> -->
+    <h1>Happy Birthday <span id="userName"></span></h1>
+    <div class="photo">
+      <img src="img.jpg" alt="Birthday Girl/Boy">
+    </div>
+    <p>Wishing you a day filled with love, laughter, and cake! 🎂 </p>
+    <p>may the coming year be filled with success,good health,and fulfilllment
+      of your dreams. You deserve to be 
+      celebrated and remembered on this special day.<br>
+       <br>
+       thank you 
+    </p>
+    <p class="heart">🎉🎉🎉</p>
+  </div>
+
+
+ <!-- Audio element to play music -->
+ <audio id="birthdayMusic" autoplay>
+      <source src="music.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+  </audio>
+
+
+
+  
+  <script>
+      const name = localStorage.getItem('name');
+      const color = localStorage.getItem('color');
+
+      document.getElementById('userName').textContent = name;
+      document.body.style.backgroundColor = color;
+      
+      
+      // Stop music after 8 seconds
+       const audio = document.getElementById('birthdayMusic');
+      setTimeout(() => {
+          audio.pause();
+          audio.currentTime = 0; // Reset to the start
+      }, 70000);  // 8000ms = 8 seconds
+
+  </script>
+</body>
+</html>
